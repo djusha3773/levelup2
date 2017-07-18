@@ -11,7 +11,7 @@ import java.util.ListIterator;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by Серж on 17.07.17.
+ * Created by my on 17.07.17.
  */
 public class MyListTest<E>  {
 
@@ -42,3 +42,4 @@ public class MyListTest<E>  {
     }
 
 }
+
