@@ -38,7 +38,9 @@ public class MyListTest<E>  {
         myList.add(5);
         myList.add(1);
 
-        assertEquals(false,myList.remove((Object)Integer.valueOf(7)));
+        assertEquals(false,myList.remove(Integer.valueOf(7)));
+        assertEquals(true,myList.remove(Integer.valueOf(5)));
+        assertEquals(false,myList.remove(Integer.valueOf(5)));
     }
 
 }

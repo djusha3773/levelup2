@@ -48,7 +48,7 @@ public class MyList<E> implements List<E> {
         return null;
     }
 
-   // @Override
+    // @Override
     public boolean add(E e) {
         Node temp = new Node(e);
         Node curr = head;
@@ -58,8 +58,9 @@ public class MyList<E> implements List<E> {
             return false;
         } else {
             while (curr.getNext() != null) {
-                if(curr.getT()==e)
-                {return true;}
+                if (curr.getT() == e) {
+                    return true;
+                }
                 curr = curr.getNext();
             }
 
@@ -70,38 +71,35 @@ public class MyList<E> implements List<E> {
 
     //@Override
     public boolean remove(Object o) {
-       Node curr = head;
+        Node curr = head;
         Node prev = curr;
         if (head == null) {
             return false;
-        } else {
-//            if(curr.getT()==(E)o)
-//            {
-//                head=curr.getNext();
-//                return true;
-//            }
-            //prev = curr;
-          //  curr = curr.getNext();
-            while (curr.getNext() != null) {
+        }
+        if (curr.getT() == (E) o) {
+            head = curr.getNext();
+            return true;
+        }
 
-                if(curr.getT()==(E)o)
-                {
-                    //curr=curr.getNext();
-                    return true;
-                }
-                curr=curr.getNext();
-               // prev.getNext();
-            }
-                //curr = curr.getNext();
-            }
 
-//            curr.setNext(temp);
-//            return false;
-//        }
+        prev = curr;
+        curr = curr.getNext();
+        while (curr.getNext() != null) {
+
+            if (curr.getT() == (E) o) {
+
+                prev.setNext(curr.getNext());
+                return true;
+            }
+            prev = curr;
+            curr = curr.getNext();
+        }
+
+
         return false;
     }
 
-   // @Override
+    // @Override
     public boolean containsAll(Collection<?> c) {
         return false;
     }
@@ -141,7 +139,7 @@ public class MyList<E> implements List<E> {
         return null;
     }
 
-   // @Override
+    // @Override
     public void add(int index, E element) {
 
     }
