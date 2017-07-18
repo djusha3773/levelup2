@@ -131,6 +131,23 @@ public class MyList<E> implements List<E> {
 
     //@Override
     public E get(int index) {
+        Node curr = head;
+        int i=0;
+
+        if(curr.getNext()==null) {
+            return null;
+        }
+
+        while (curr.getNext() != null) {
+            curr =curr.getNext();
+            if (i==index) {
+                return (E)curr.getT();
+            }
+
+            //curr = curr.getNext();
+            i++;
+        }
+
         return null;
     }
 

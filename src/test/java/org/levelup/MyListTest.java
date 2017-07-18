@@ -43,5 +43,17 @@ public class MyListTest<E>  {
         assertEquals(false,myList.remove(Integer.valueOf(5)));
     }
 
+
+    @Test
+    public void get()
+    {
+        myList.add(7);
+        myList.add(3);
+
+        assertEquals(Integer.valueOf(7),myList.get(0));
+        assertEquals(Integer.valueOf(3),myList.get(1));
+        assertEquals(null,myList.get(2));
+
+    }
 }
 
