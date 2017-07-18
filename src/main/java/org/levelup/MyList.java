@@ -1,6 +1,5 @@
 package org.levelup;
 
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -11,12 +10,12 @@ import java.util.ListIterator;
  */
 public class MyList<E> implements List<E> {
 
-    private Node<E> node;
+    private Node<E> head;
 
     private int size = 0;
 
     public MyList() {
-        this.node = new Node<E>();
+        this.head = new Node<E>();
     }
 
     //@Override
@@ -51,11 +50,54 @@ public class MyList<E> implements List<E> {
 
    // @Override
     public boolean add(E e) {
-        return false;
+        Node temp = new Node(e);
+        Node curr = head;
+
+        if (head == null) {
+            head = temp;
+            return false;
+        } else {
+            while (curr.getNext() != null) {
+                if(curr.getT()==e)
+                {return true;}
+                curr = curr.getNext();
+            }
+
+            curr.setNext(temp);
+            return false;
+        }
     }
 
     //@Override
     public boolean remove(Object o) {
+       Node curr = head;
+        Node prev = curr;
+        if (head == null) {
+            return false;
+        } else {
+//            if(curr.getT()==(E)o)
+//            {
+//                head=curr.getNext();
+//                return true;
+//            }
+            //prev = curr;
+          //  curr = curr.getNext();
+            while (curr.getNext() != null) {
+
+                if(curr.getT()==(E)o)
+                {
+                    //curr=curr.getNext();
+                    return true;
+                }
+                curr=curr.getNext();
+               // prev.getNext();
+            }
+                //curr = curr.getNext();
+            }
+
+//            curr.setNext(temp);
+//            return false;
+//        }
         return false;
     }
 
@@ -99,7 +141,7 @@ public class MyList<E> implements List<E> {
         return null;
     }
 
-    //@Override
+   // @Override
     public void add(int index, E element) {
 
     }
