@@ -20,11 +20,15 @@ public class MyList<E> implements List<E> {
 
     //@Override
     public int size() {
-        return 0;
+
+        return size;
     }
 
     //@Override
     public boolean isEmpty() {
+        if(head.getNext()==null) {
+            return true;
+        }
         return false;
     }
 
@@ -55,6 +59,7 @@ public class MyList<E> implements List<E> {
 
         if (head == null) {
             head = temp;
+            size++;
             return false;
         } else {
             while (curr.getNext() != null) {
@@ -65,6 +70,7 @@ public class MyList<E> implements List<E> {
             }
 
             curr.setNext(temp);
+            size++;
             return false;
         }
     }
@@ -78,6 +84,7 @@ public class MyList<E> implements List<E> {
         }
         if (curr.getT() == (E) o) {
             head = curr.getNext();
+            size--;
             return true;
         }
 
@@ -89,6 +96,7 @@ public class MyList<E> implements List<E> {
             if (curr.getT() == (E) o) {
 
                 prev.setNext(curr.getNext());
+                size--;
                 return true;
             }
             prev = curr;

@@ -55,5 +55,28 @@ public class MyListTest<E>  {
         assertEquals(null,myList.get(2));
 
     }
+    @Test
+    public void size()
+    {
+        myList.add(1);
+        assertEquals(1,myList.size());
+
+        myList.add(5);
+        assertEquals(2,myList.size());
+
+
+    }
+
+    @Test
+    public void isEmpty()
+    {
+        assertEquals(true,myList.isEmpty());
+
+        myList.add(5);
+        assertEquals(false,myList.isEmpty());
+
+
+    }
+
 }
 
